@@ -1,0 +1,33 @@
+MQ Browser – Trial Version
+Copyright (c) 2026 I/E Marc Siegert, Tbilisi, Georgia. All rights reserved.
+https://shop.siegert.ge
+
+TRIAL TERMS
+
+1. You may use this trial version free of charge to evaluate MQ Browser.
+
+2. For 14 days from the first start, all features are available. After that the
+   trial continues to work as "MQ Browser Lite": at most 10 messages per browse,
+   no export and no "Open in editor". Lite may be used free of charge without
+   time limit.
+
+3. You may not redistribute, sell, rent, modify, decompile or reverse engineer the
+   trial version, or circumvent its time or feature limits, except where applicable
+   law expressly permits this.
+
+4. The trial version is provided "as is", without warranty and without support.
+   To the extent permitted by law, I/E Marc Siegert is not liable for any damages
+   arising from its use, except for intent, gross negligence, and injury to life,
+   body or health.
+
+5. The full version removes all limits. Licenses (Single User, Team, Enterprise)
+   and the full license terms (EULA) are available at
+   https://shop.siegert.ge  ·  https://shop.siegert.ge/eula-mq-browser.html
+
+6. These terms are governed by the laws of Georgia, excluding the CISG.
+
+IBM and IBM MQ are trademarks of International Business Machines Corporation.
+MQ Browser is not affiliated with or endorsed by IBM. The IBM MQ client libraries
+are not included.
+
+Questions: info@siegert.ge

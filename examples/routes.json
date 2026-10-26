@@ -1,0 +1,7 @@
+// Example routes – copy to config\routes.json (next to mq-browser.json)
+{
+  "routes": [
+    { "name": "Order to cash", "queues": ["ORDER", "BILLING.*.IN", "SHIPPING.REQ"] },
+    { "name": "Errors & backouts", "queues": ["*.ERROR", "*.BACKOUT"] }
+  ]
+}

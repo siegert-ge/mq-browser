@@ -1,0 +1,27 @@
+// MQ Browser – example configuration (JSON, // comments allowed)
+// Copy to config\mq-browser.json and adapt hosts, ports and channels.
+{
+  "defaults": {
+    "channel": "SYSTEM.DEF.SVRCONN",
+    "auth": "none"                 // "prompt" = always ask for user/password
+  },
+  "queuePattern": "*",
+  "systemQueuePattern": ["SYSTEM.*", "AMQ.*"],
+  "ui": {
+    "timeZone": "America/New_York", // e.g. "Asia/Kolkata", "Europe/Berlin"; omit = computer time zone
+    "maxHits": 20000
+  },
+  "environments": [
+    { "name": "DEV", "queueManagers": [
+      { "name": "QM_DEV1", "port": 1414, "role": "Gateway", "host": "mq-dev.example.com", "channel": "DEV.APP.SVRCONN" },
+      { "name": "QM_DEV2", "port": 1415, "role": "Broker",  "host": "mq-dev.example.com", "channel": "DEV.APP.SVRCONN" }
+    ]},
+    { "name": "TEST", "queueManagers": [
+      { "name": "QM_TEST1", "port": 1414, "host": "mq-test.example.com", "channel": "TEST.APP.SVRCONN",
+        "queues": ["APP.ORDER.LOG", "APP.BILLING.LOG"] }   // offered even without PCF authority
+    ]},
+    { "name": "Local (Docker)", "queueManagers": [
+      { "name": "QM1", "port": 1414, "host": "localhost", "channel": "DEV.APP.SVRCONN", "auth": "prompt", "user": "app" }
+    ]}
+  ]
+}

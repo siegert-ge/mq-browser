@@ -1,0 +1,23 @@
+// Example record layouts – copy the "recordLayouts" block into config\mq-browser.json
+{
+  "recordLayouts": [
+    // Fixed length, host data in EBCDIC (decoded by the message CCSID, e.g. 37, 273, 500, 1141)
+    { "name": "Customer", "type": "fixed",
+      "match": { "queue": "*.CUSTOMER.*", "startsWith": "C01" },
+      "fields": [
+        { "name": "RecordType", "length": 3 },
+        { "name": "CustomerId", "length": 10 },
+        { "name": "Name",       "length": 30 },
+        { "name": "Balance",    "length": 6, "type": "packed", "decimals": 2 },
+        { "name": "Points",     "length": 5, "type": "zoned" },
+        { "name": "Flags",      "length": 2, "type": "hex" }
+      ] },
+    // Pipe-separated with fixed field names
+    { "name": "Order", "type": "delimited", "delimiter": "|",
+      "match": { "queue": ["*.ORDER.IN", "*.ORDER.OUT"] },
+      "fields": ["OrderId", "CustomerId", "Date", "Status", "Amount"] },
+    // Tab-separated, field names taken from the first line
+    { "name": "Price list", "type": "delimited", "delimiter": "\t", "header": true,
+      "match": { "queue": "*.PRICES.*" } }
+  ]
+}
